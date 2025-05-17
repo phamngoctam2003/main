@@ -23,7 +23,7 @@ class CheckUDMiddleware
             return response()->json(['message' => 'Người dùng chưa đăng nhập!'], 401);
         }
 
-        $allowedRoles = ['editor', 'moderator'];
+        $allowedRoles = ['editor', 'moderator', 'admin'];
 
         if (!in_array($user->role, $allowedRoles)) {
             return response()->json(['message' => 'Bạn không có quyền sử dụng chức năng này!'], 403);

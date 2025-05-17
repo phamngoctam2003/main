@@ -294,7 +294,7 @@ export const Tags = () => {
                                 <td className="px-6 py-4">
                                     {/* Modal toggle */}
                                     <Link
-                                        to={`dashboard/tags/edit/${tag.id}`}
+                                        to={`/dashboard/tags/edit/${tag.id}`}
                                         type="button"
                                         data-modal-target="editUserModal"
                                         data-modal-show="editUserModal"

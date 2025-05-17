@@ -8,7 +8,6 @@ export const Accounts = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [selectedUsers, setselectedUsers] = useState([]);
 
-    UsersService.test1();
 
     const checkUser = (e, id) => {
         setselectedUsers((prevselectedUsers) => {

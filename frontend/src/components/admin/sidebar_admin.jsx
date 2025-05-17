@@ -22,7 +22,7 @@ const Sidebar = () => {
                 onClick={() => handleMenuItemClick('/dashboard')}
             >
                 <i className="fas fa-tachometer-alt" />
-                <Link href="/dashboard">
+                <Link to="/dashboard">
                     <span>Dashboards</span>
                 </Link>
             </div>
@@ -30,7 +30,7 @@ const Sidebar = () => {
                 onClick={() => handleMenuItemClick('/dashboard/categories')}
             >
                 <i className="fas fa-file-alt" />
-                <Link href="/dashboard/categories">
+                <Link to="/dashboard/categories">
                     <span>Danh Mục bài viết</span>
                 </Link>
             </div>
@@ -38,7 +38,7 @@ const Sidebar = () => {
                 onClick={() => handleMenuItemClick('/dashboard/tags')}
             >
                 <i className="fas fa-file-alt" />
-                <Link href="/dashboard/tags">
+                <Link to="/dashboard/tags">
                     <span>Quản lý Thẻ</span>
                 </Link>
             </div>
@@ -46,16 +46,15 @@ const Sidebar = () => {
                 onClick={() => handleMenuItemClick('/dashboard/posts')}
             >
                 <i className="fas fa-th" />
-                <Link href="/dashboard/posts">
+                <Link to="/dashboard/posts">
                     <span>Quản Lý Bài Viết</span>
                 </Link>
             </div>
-            {userRole === "admin" &&
                 <>
                     <div className={`menu-item ${activerItem === '/dashboard/accounts' ? 'active' : ''}`}
                         onClick={() => handleMenuItemClick('/dashboard/accounts')}
                     >
-                        <Link href="/dashboard/accounts">
+                        <Link to="/dashboard/accounts">
                             <i className="fas fa-home" />
                             <span>Quản lý tài khoản</span>
                         </Link>
@@ -63,13 +62,12 @@ const Sidebar = () => {
                     <div className={`menu-item ${activerItem === '/dashboard/comments' ? 'active' : ''}`}
                         onClick={() => handleMenuItemClick('/dashboard/comments')}
                     >
-                        <Link href="/dashboard/comments">
+                        <Link to="/dashboard/comments">
                             <i className="fas fa-home" />
                             <span>Quản lý Bình Luận</span>
                         </Link>
                     </div>
                 </>
-            }
         </div>
     );
 };

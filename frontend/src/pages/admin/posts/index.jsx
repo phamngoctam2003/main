@@ -168,7 +168,7 @@ export const Posts = () => {
                 </h5>
 
                 {
-                    userRole === "editor" &&
+                    userRole === "editor" || 'admin' &&
                     <Link
                         to="/dashboard/posts/create"
                         className="inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white bg-indigo-600 w-auto"
@@ -375,7 +375,7 @@ export const Posts = () => {
                                 </td>
                                 <td className="px-6 py-4">
                                     <Link
-                                        to={`dashboard/posts/edit/${posts.id}`}
+                                        to={`/dashboard/posts/edit/${posts.id}`}
                                         type="button"
                                         data-modal-target="editUserModal"
                                         data-modal-show="editUserModal"

@@ -23,7 +23,7 @@ class CheckCreateMiddleware
             return response()->json(['message' => 'Người dùng chưa đăng nhập!'], 401);
         }
 
-        $allowedRoles = ['editor'];
+        $allowedRoles = ['editor', 'admin'];
 
         if (!in_array($user->role, $allowedRoles)) {
             return response()->json(['message' => 'Bạn không có quyền thêm dữ liệu!'], 403);

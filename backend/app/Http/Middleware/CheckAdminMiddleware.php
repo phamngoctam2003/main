@@ -25,7 +25,9 @@ class CheckAdminMiddleware
         $allowedRoles = ['admin'];
 
         if (!in_array($user->role, $allowedRoles)) {
-            return response()->json(['message' => 'Bạn không có quyền quản lý chức năng này!'], 403);
+            return response()->json(['message' => 'Bạn không có quyền quản lý chức năng này!', 
+                'role' => $user->role
+        ], 403);
         }
 
         return $next($request);
