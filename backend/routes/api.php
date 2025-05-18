@@ -20,6 +20,9 @@ use App\Http\Controllers\CommentController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+route::get('test-api', function () {
+    return response()->json(['message' => 'Sever đã hoạt động!']);
+});
 Route::post('/getaccount', [UsersController::class, 'getAccount']);
 Route::post('/changepassword', [UsersController::class, 'ChangePassword']);
 Route::post('/updateaccount', [UsersController::class, 'updateAccount']);
@@ -84,6 +87,3 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/posts/commentadd', [CommentController::class, 'store']); 
 });
 
-route::get('test-api', function () {
-    return response()->json(['message' => 'Sever đã hoạt động!']);
-});
