@@ -83,3 +83,7 @@ Route::middleware(['auth:api', 'check.update.delete'])->group(function () {
 Route::middleware(['auth:api'])->group(function () {
     Route::post('/posts/commentadd', [CommentController::class, 'store']); 
 });
+
+route::get('test-api', function () {
+    return response()->json(['message' => 'Sever đã hoạt động!']);
+});
