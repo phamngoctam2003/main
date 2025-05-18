@@ -21,8 +21,11 @@ COPY . .
 # Cài đặt dependencies
 RUN composer install
 
-#Cấp quyền cho thư mục storage và bootstrap/cache
-# RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+# Tạo thư mục cần thiết nếu chưa có
+RUN mkdir -p /var/www/storage /var/www/bootstrap/cache
+
+# Cấp quyền cho thư mục storage và bootstrap/cache
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Cấp quyền
 RUN chown -R www-data:www-data /var/www/storage
